@@ -1,4 +1,4 @@
-# Node for Professional JavaScript for Web Developers
+# Note for Professional JavaScript for Web Developers
 
 ## Syntax
 ### Case-sensitivity
