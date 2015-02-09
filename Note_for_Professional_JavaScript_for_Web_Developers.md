@@ -12,7 +12,7 @@
 > // single line comment
 
 > /*
->   multi-line comments
+> * multi-line comments
 > */
 
 ### Strict Mode
@@ -74,6 +74,7 @@ The value _undefined_ is a derivative of _null_, they are defined to be superfic
 true or false.
 
 Al types of value have Boolean equivalents in ECMAScript.  To convert a value into its Boolean equivalent, use _Boolean()_ function.
+
 DATA TYPE | VALUES CONVERTED TO TRUE | VALUES CONVERTED TO FALSE
 ----------|--------------------------|--------------------------
 Boolean | true | false
@@ -102,6 +103,7 @@ Floating point values are accurate up to 17 decimal places.
 
 #### Range of values
 Number.MIN_VALUE stores the smallest number, which is 5e-324
+
 Number.MAX_VALUE stores the largest number, which is 1.7976931348623157e+308
 
 #### NaN
