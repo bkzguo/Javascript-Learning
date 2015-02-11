@@ -1,12 +1,16 @@
 # Note for Professional JavaScript for Web Developers
 
+
 ## Syntax
+
 ### Case-sensitivity
+
 
 ###Identifiers
 * The first character must be a letter, an underscore (_), or a dollar sign ($).
 * All other letters may be a letter, an underscore, a dollar sign, and numbers.
 * User camel case for identifiers
+
 
 ### Comments
 > // single line comment
@@ -14,6 +18,7 @@
 > /*
 > * multi-line comments
 > */
+
 
 ### Strict Mode
 Strict mode changes many parts of how JavaScript is executed.
@@ -23,6 +28,7 @@ Strict mode changes many parts of how JavaScript is executed.
 > 	"use strict";
 > 	//function body
 > }
+
 
 ### Statements
 Statements that are terminated by semicolon is preferred as best practise of coding.
@@ -34,8 +40,10 @@ User code block in control statement such as _if_ is also preferred
 > alert(test);
 > }
 
+
 ## Keywords and Reserved Words
 Know the difference of keywords and reserved words.
+
 
 ## Variables
 A variable can hold any type of data.
@@ -45,6 +53,7 @@ It is not recommended to swtich data type that a variable contains.  However it 
 Use _var_ operator to define local variable of a scope.
 
 Omitting _var_ operator to make a variable becomes global.  But it is not recommended.  Strict mode throws a _ReferenceError when an undeclared variable is assigned a value.
+
 
 ## Data Types
 * Undefined
@@ -61,14 +70,17 @@ Use the operator provides datatype of a variable
 > alert(typeof(message));
 > alert(type of 95);
 
+
 ### The Undefined type
 When a variable is declared by not initialized, it is assigned the value of _undefined_.
+
 
 ### The Null type
 When defining a variable that is meant to later hold an object, it is advisable to initialize it to _null_.
 
 The value _undefined_ is a derivative of _null_, they are defined to be superficially equal as follow:
 > alert(null == undefined);  //return true
+
 
 ### The Boolean type
 true or false.
@@ -82,6 +94,7 @@ String | Any nonempty string | ""(empty string)
 Number | Any nonzero number, including infinity | 0, NaN
 Object | Any object | null
 Undefined | n/a | undefined
+
 
 ### The Number type
 * decimal integer
@@ -101,20 +114,24 @@ E-notation is to have a number followed by an uppercase or lower case letter E, 
 
 Floating point values are accurate up to 17 decimal places.
 
+
 #### Range of values
 Number.MIN_VALUE stores the smallest number, which is 5e-324
 
 Number.MAX_VALUE stores the largest number, which is 1.7976931348623157e+308
+
 
 #### NaN
 short for "Not a Number", it indicates a failed return number.
 
 use isNaN() function to determine if a value is NaN.
 
+
 #### Number Conversions
 * Number().  Can be used on any data type.
 * parseInt().  Specifically used for converting strings to numbers.
 * parseFloat().  Specifically used for converting strings to numbers.
+
 
 ### The String type
 Using double quotes or single quotes has no difference.
@@ -126,7 +143,9 @@ Using double quotes or single quotes has no difference.
 Use _length_ property of a string to return its length
 > alert(text.length);
 
+
 #### The Nature of Strings
+
 
 #### Converting to a String
 * toString()
@@ -143,6 +162,7 @@ Use _length_ property of a string to return its length
   * if a value is _null_, "null" is returned.
   * if a value is _undefined_, "undefinied" is returned.
 
+
 ### The Object type
 Use _new_ to create object.
 > var o = new Object();
@@ -155,6 +175,3 @@ Each object has the following properties:
 * toLocaleString()
 * toString()
 * valueOf()
-
-
-
