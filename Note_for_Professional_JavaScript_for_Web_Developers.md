@@ -129,6 +129,18 @@ use isNaN() function to determine if a value is NaN.
 
 #### Number Conversions
 * Number().  Can be used on any data type.
+  * Boolean, true -> 1, false -> 0
+  * Number, simply pass through and returned
+  * _null_ -> 0
+  * _undefined_ -> NaN
+  * String,
+    * If contains only number, converted to decimal number, with signed.  i.e "123" -> 123
+    * If contains valid floating point format, converted to floating point numeric value. i.e "1.1" -> 1.1
+    * If contains valid hexadecimal format, converted to integer that matahces the hex value
+    * If empty, -> 0
+    * If others, -> NaN
+  * Object,
+    * call valueOf() and return value, if result is NaN, call toString()
 * parseInt().  Specifically used for converting strings to numbers.
 * parseFloat().  Specifically used for converting strings to numbers.
 
@@ -158,9 +170,9 @@ Use _length_ property of a string to return its length
   	> alert(num.toString(10)); //"10"
   	> alert(num.toString(16)); //"a"
 * String()
-  * available for _null_ and _undefined_.
-  * if a value is _null_, "null" is returned.
-  * if a value is _undefined_, "undefinied" is returned.
+  * if value has toString() method, call toString().
+  * if _null_, -> "null".
+  * if _undefined_, -> "undefinied".
 
 
 ### The Object type
@@ -175,3 +187,193 @@ Each object has the following properties:
 * toLocaleString()
 * toString()
 * valueOf()
+
+
+## Operators
+* math operations
+* bitwise operators
+* relational operators
+* equality operators
+
+### Unary Operators
+Operators that work on only one value
+
+#### Increment(++)/Decrement(--)
+Besides integers, the operator will convert strings, Booleans, floating-point values and object before apply the changes, by using the Number() method under the hood.
+
+
+#### Unary Plus(+) and Minus(-)
+The operator will convert nonnumeric value to number, using Number() method under the hood.
+
+
+### Bitwise Operators
+Operators works on bits of numbers.  It converted the 64-bit number to 32-bit integer then operated on it, then convert the result back to 64-bits.
+
+The 32nd bit of a value is the signed of the value.
+
+#### Bitwise NOT(~)
+Returns the number's complement.
+
+
+#### Bitwise AND(&)
+Lines up the bits of each number, and using the following rules to perform operation between the two bits in the same position
+
+BIT FROM FIRST NUMBER | BIT FROM SECOND NUMBER | RESULT
+1 | 1 | 1
+1 | 0 | 0
+0 | 1 | 0
+0 | 0 | 0
+
+
+#### Bitwise OR(|)
+Follow the following rules:
+
+BIT FROM FIRST NUMBER | BIT FROM SECOND NUMBER | RESULT
+1 | 1 | 1
+1 | 0 | 1
+0 | 1 | 1
+0 | 0 | 0
+
+
+#### Bitwise XOR(^)
+Follow the following rules:
+
+BIT FROM FIRST NUMBER | BIT FROM SECOND NUMBER | RESULT
+1 | 1 | 0
+1 | 0 | 1
+0 | 1 | 1
+0 | 0 | 0
+
+
+#### Left Shift(<<)
+Shift all bits to the left by the number given, and fill the empty bits with 0s.
+
+
+#### Signed Rigth Shift(>>)
+Shift all bits to the right while preserving the sign on 32nd bit, filled empty bits with 0s.
+
+
+#### Unsigned Right Shift(>>>)
+Shift all bits to the right, filled 0s on empty bits including the 32nd signed bit.
+
+
+### Boolean Operators
+
+#### Logical NOT(!)
+Besides Boolean value, it converts the operand of other type to Boolean first and negates it.
+* Object -> false
+* empty string -> true
+* nonempty string -> false
+* 0 -> true
+* any number other than 0 -> false
+* _null_ -> true
+* _undefined_ -> true
+
+Two NOT operators (!!) can simulate the behavior of Boolean() method.
+
+
+#### Logical AND(&&)
+Follow the rules:
+
+OPERAND 1 | OPERAND 2 | RESULT
+true | true | true
+true | false | false
+false | true | false
+false | false | false
+
+Also:
+* if the first operand is an object, return the second operand
+* if the second operand is an object, it is returned only if the first operand is _true_
+* if both operands are objects, return the second operand
+* if either operand is _null_, return _null_
+* if either operand is _NaN_, return _NaN_
+* if either operand is _undefined_, return _undefined_
+
+__Short-circuited operations:__ if the first operand determines the result, the second operand is never evaluated.
+
+
+#### Logical OR(||)
+Follow the rules:
+
+OPERAND 1 | OPERAND 2 | RESULT
+true | true | true
+true | false | true
+false | true | true
+false | false | false
+
+If either operand is not a Boolean, it will:
+* if the first operand is an object, the first operand is returned
+* if the first operand evaluates to _false_, the second operand is returned
+* if both operands are objects, the first operand is returned
+* if both operands are _null_, _null_ is returned
+* if both operands are _undefined_, _undefined_ is returned
+* if both operands are _NaN_, _NaN_ is returned.
+
+The logical OR is also short-circuited operator.
+
+
+### Multiplicative Operators
+
+#### Multiply(*)
+* if either operand is _NaN_, the result is _NaN_
+* if infinity is multiplied by 0, the result is _NaN_
+* if either operand isn't a number, it is converted to number using Number() under the hood
+
+
+#### Divid(/)
+* if either operand is _NaN_, the result is _NaN_
+* if infinity is divided by infinity, the result is _NaN_
+* if 0 is divided by 0, the result is _NaN_
+* if either operand isn't a number, it is converted to number using Number() under the hood
+
+
+#### M0dulus(%)
+* if infinity or -infinity is divided by a finite number, the result is _NaN_
+* if the dividend is a finite number and divisor is 0, the result is _NaN_
+* if infinity is divided by infinity, the result is _NaN_
+* if either operand isn't a number, it is converted to number using Number() under the hood
+
+
+### Additive Operators
+
+#### Add(+)
+* if either operand is string, the other operand is converted to a string, and the result is the concatenation of the two strings.
+* if either operand is object, number or Boolean, its toString() method is called to get a string value, then the previous rules applied.
+* For _undefined_ and _null_, String() method is called and the strings are concatenated.
+
+
+#### Subtract(-)
+* if either operand is a string, Boolean, _null_, _undefined_, it is converted to a number and the calculation continues.
+* if either operand is an object, its valueOf() method is called.  If no valueOf() method is defined, toString() method is called, then the calculation continues.
+
+
+### Relational Operators
+* less-than(<)
+* greater-than(>)
+* less-than-or-equal-to(<=)
+* greater-than-or-equal-to(>=)
+
+Rules:
+* if numbers, perform numeric comparison
+* if strings, compare character codes of each corresponding character in the string
+* if one is number, convert the other to a number, then compare
+* if one is an object, call valueOf().  If valueOf() is not available, call toString().  Then apply the above rules
+* if one is a Boolean, convert it to number and compare.
+
+
+### Equality Operators
+
+#### Equal(==) and Not Equal(!=)
+Do conversions first:
+* if one is Boolean, convert to a numeric number.
+* if one is string and the other is a number, convert string to a number.
+* if one is object and the other is not, convert object by valueOf() to a number.
+* Values of _null_ and _undefined_ are equal.
+* if either one is _NaN_, the equal operator return false, the not-equal operator return true.  If both are _NaN_, the equal operator returns false.
+* if both are objects, compare and see if they are the same object.
+
+
+#### Identically Equal(===) and Not Identically Equal(|==)
+compare witout conversion
+
+
