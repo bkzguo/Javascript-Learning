@@ -15,26 +15,30 @@
 ### Comments
     // single line comment
 
+
     /*
-    * multi-line comments
-    */
+     * multi-line comments
+     */
 
 
 ### Strict Mode
 Strict mode changes many parts of how JavaScript is executed.
 
 * put "use strict"; on top of js file to trigger strict mode of browser
-    function doSomething() {
-    	"use strict";
-    	//function body
-    }
+
+        function doSomething() {
+        	"use strict";
+        	//function body
+        }
 
 
 ### Statements
 Statements that are terminated by semicolon is preferred as best practise of coding.
+
     var diff = a- b;  //valid and preferred
 
 User code block in control statement such as _if_ is also preferred
+
     if (test) {
     test = false;
     alert(test);
@@ -65,6 +69,7 @@ Omitting _var_ operator to make a variable becomes global.  But it is not recomm
 
 ### The typeof operator
 Use the operator provides datatype of a variable
+
     var message = "some string";
     alert(typeof message);
     alert(typeof(message));
@@ -79,6 +84,7 @@ When a variable is declared by not initialized, it is assigned the value of _und
 When defining a variable that is meant to later hold an object, it is advisable to initialize it to _null_.
 
 The value _undefined_ is a derivative of _null_, they are defined to be superficially equal as follow:
+
     alert(null == undefined);  //return true
 
 
@@ -98,18 +104,25 @@ Undefined | n/a | undefined
 
 ### The Number type
 * decimal integer
-    var intNum = 55;
+
+        var intNum = 55;
+
 * octal integer (base 8)
-    var octalNum = 070;
+
+        var octalNum = 070;
+
 * hexadecimal (base 16)
-    var hexNum = 0xA;
+
+        var hexNum = 0xA;
 
 #### Floating-Point values
 Floating-point values uses twice as much memory as storing integer values.
+
     var floatNum1 = 1.1
     var floatNum2 = .1   //valid, but not recommended
 
 E-notation is to have a number followed by an uppercase or lower case letter E, followed by the power of 10 to multiply by.
+
     var floatNum = 3.125e7  //equal to 31250000
 
 Floating point values are accurate up to 17 decimal places.
@@ -153,6 +166,7 @@ Using double quotes or single quotes has no difference.
 * \unnnn  A unicode character represented by hexdecimal code nnnn (where n is a hex digit 0-F).  Example \u03a3 equals to Greek symbol ∑.
 
 Use _length_ property of a string to return its length
+
     alert(text.length);
 
 
@@ -163,12 +177,14 @@ Use _length_ property of a string to return its length
 * toString()
   * available on values that are numbers, Booleans, objects and strings.
   * when used on a number, toString() accepts argument of radix to output the number
-  	    var num = 10;
-  	    alert(num.toString());  //"10"
-  	    alert(num.toString(2)); //"1010"
-  	    alert(num.toString(8)); //"12"
-  	    alert(num.toString(10)); //"10"
-  	    alert(num.toString(16)); //"a"
+
+            var num = 10;
+            alert(num.toString());  //"10"
+            alert(num.toString(2)); //"1010"
+            alert(num.toString(8)); //"12"
+            alert(num.toString(10)); //"10"
+            alert(num.toString(16)); //"a"
+
 * String()
   * if value has toString() method, call toString().
   * if _null_, ->"null".
@@ -177,6 +193,7 @@ Use _length_ property of a string to return its length
 
 ### The Object type
 Use _new_ to create object.
+
     var o = new Object();
 
 Each object has the following properties:
@@ -219,6 +236,7 @@ Returns the number's complement.
 Lines up the bits of each number, and using the following rules to perform operation between the two bits in the same position
 
 BIT FROM FIRST NUMBER | BIT FROM SECOND NUMBER | RESULT
+--|---|--
 1 | 1 | 1
 1 | 0 | 0
 0 | 1 | 0
@@ -229,6 +247,7 @@ BIT FROM FIRST NUMBER | BIT FROM SECOND NUMBER | RESULT
 Follow the following rules:
 
 BIT FROM FIRST NUMBER | BIT FROM SECOND NUMBER | RESULT
+--|---|--
 1 | 1 | 1
 1 | 0 | 1
 0 | 1 | 1
@@ -239,6 +258,7 @@ BIT FROM FIRST NUMBER | BIT FROM SECOND NUMBER | RESULT
 Follow the following rules:
 
 BIT FROM FIRST NUMBER | BIT FROM SECOND NUMBER | RESULT
+--|---|--
 1 | 1 | 0
 1 | 0 | 1
 0 | 1 | 1
@@ -276,6 +296,7 @@ Two NOT operators (!!) can simulate the behavior of Boolean() method.
 Follow the rules:
 
 OPERAND 1 | OPERAND 2 | RESULT
+-----|------|-----
 true | true | true
 true | false | false
 false | true | false
@@ -289,13 +310,14 @@ Also:
 * if either operand is _NaN_, return _NaN_
 * if either operand is _undefined_, return _undefined_
 
-__Short-circuited operations:__ if the first operand determines the result, the second operand is never evaluated.
+> __Short-circuited operations:__ if the first operand determines the result, the second operand is never evaluated.
 
 
 #### Logical OR(||)
 Follow the rules:
 
 OPERAND 1 | OPERAND 2 | RESULT
+-----|------|-----
 true | true | true
 true | false | true
 false | true | true
@@ -378,6 +400,7 @@ compare witout conversion
 
 
 #### Conditional Operator
+
     valuable = boolean_expression ? true_value : false_value;
 
 
@@ -402,6 +425,7 @@ Allow execution of more than one operation in a single statement.
 ## Statements
 
 ### The _if_ statement
+
     if (condition) statement1; else statement2;
 
     if (condition1) {
@@ -414,30 +438,35 @@ Allow execution of more than one operation in a single statement.
 
 
 ### The _do-while_ statement
+
     do {
       statement
     } while (expression);
 
 
 ### The _while_ statement
+
     while (expression) {
       statement;
     }
 
 
 ### The _for_ statement
+
     for (var num=initial_value; expression; post-loop-expression) {
       statement;
     }
 
 
 ### The _for-in_ statement
+
     for (property in expression) {
       statement
     }
 
 
 ### Labeled statement
+
     label: statement;
 
 
@@ -448,12 +477,14 @@ Allow execution of more than one operation in a single statement.
 
 ### The _with_ statement
 Set scope of the code within a particular object.
+
     with (expression) statement;
 
-**Not recommend to use with statement.**
+> Not recommend to use with statement.
 
 
 ### The _switch_ statement
+
     switch (expression) {
       case value1: statement
         break;
@@ -466,10 +497,11 @@ Set scope of the code within a particular object.
       default: statement
     }
 
-** No type coercion occurs **
+> No type coercion occurs
 
 
 ## Functions
+
     function functionName(arg0, arg1, ..., argN) {
       statements;
     }
