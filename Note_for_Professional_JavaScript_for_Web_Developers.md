@@ -15,7 +15,6 @@
 ### Comments
     // single line comment
 
-
     /*
      * multi-line comments
      */
@@ -24,12 +23,12 @@
 ### Strict Mode
 Strict mode changes many parts of how JavaScript is executed.
 
-* put "use strict"; on top of js file to trigger strict mode of browser
+> put '"use strict";' on top of js file to trigger strict mode of browser
 
-        function doSomething() {
-        	"use strict";
-        	//function body
-        }
+    function doSomething() {
+      "use strict";
+      //function body
+    }
 
 
 ### Statements
@@ -40,8 +39,8 @@ Statements that are terminated by semicolon is preferred as best practise of cod
 User code block in control statement such as _if_ is also preferred
 
     if (test) {
-    test = false;
-    alert(test);
+      test = false;
+      alert(test);
     }
 
 
@@ -289,7 +288,7 @@ Besides Boolean value, it converts the operand of other type to Boolean first an
 * _null_ ->true
 * _undefined_ ->true
 
-Two NOT operators (!!) can simulate the behavior of Boolean() method.
+> Two NOT operators (!!) can simulate the behavior of Boolean() method.
 
 
 #### Logical AND(&&)
@@ -546,3 +545,31 @@ However, inside the function you can simulate the overloading by checking type a
 
 ### Argument Passing
 All function arguments are passed by value, which is passed into a local variable from outside.
+
+
+### Determining Type
+* Use 'typeof' to determine primitive variable
+
+            var s = "MyName";
+            alert(typeof var);
+
+* User 'instanceof' to determine reference variable
+
+            result = variable instanceof constructor
+
+
+## Execution Context and Scope
+* Execution contexts exist globally and within functions.
+* Each time a new execution context is entered, it creates a scope chain to search for variables and functions.
+* The global context has access only to variables and functions in the global context and cannot directly access any data inside local contexts.
+* The execution context of variables helps to determine when memory will be freed.
+
+
+## Garbage Collection
+* Values that go out of scope will automatically be marked for reclamation and will be deleted during the garbage collection process.
+* The predominant garbage collection algorithm is called *mark-and-sweep*.
+* Another algorithm is *reference counting*, which is no longer used by most Javascript engine, except IE.
+* Reference counting causes problems when circular references exists.
+* Dereferencing variable helps cleaning circular references and garbage collection on global objects.
+
+
