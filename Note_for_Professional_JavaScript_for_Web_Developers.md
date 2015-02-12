@@ -13,32 +13,32 @@
 
 
 ### Comments
-> // single line comment
+    // single line comment
 
-> /*
-> * multi-line comments
-> */
+    /*
+    * multi-line comments
+    */
 
 
 ### Strict Mode
 Strict mode changes many parts of how JavaScript is executed.
 
 * put "use strict"; on top of js file to trigger strict mode of browser
-> function doSomething() {
-> 	"use strict";
-> 	//function body
-> }
+    function doSomething() {
+    	"use strict";
+    	//function body
+    }
 
 
 ### Statements
 Statements that are terminated by semicolon is preferred as best practise of coding.
-> var diff = a- b;  //valid and preferred
+    var diff = a- b;  //valid and preferred
 
 User code block in control statement such as _if_ is also preferred
-> if (test) {
-> test = false;
-> alert(test);
-> }
+    if (test) {
+    test = false;
+    alert(test);
+    }
 
 
 ## Keywords and Reserved Words
@@ -65,10 +65,10 @@ Omitting _var_ operator to make a variable becomes global.  But it is not recomm
 
 ### The typeof operator
 Use the operator provides datatype of a variable
-> var message = "some string";
-> alert(typeof message);
-> alert(typeof(message));
-> alert(type of 95);
+    var message = "some string";
+    alert(typeof message);
+    alert(typeof(message));
+    alert(type of 95);
 
 
 ### The Undefined type
@@ -79,7 +79,7 @@ When a variable is declared by not initialized, it is assigned the value of _und
 When defining a variable that is meant to later hold an object, it is advisable to initialize it to _null_.
 
 The value _undefined_ is a derivative of _null_, they are defined to be superficially equal as follow:
-> alert(null == undefined);  //return true
+    alert(null == undefined);  //return true
 
 
 ### The Boolean type
@@ -98,19 +98,19 @@ Undefined | n/a | undefined
 
 ### The Number type
 * decimal integer
-> var intNum = 55;
+    var intNum = 55;
 * octal integer (base 8)
-> var octalNum = 070;
+    var octalNum = 070;
 * hexadecimal (base 16)
-> var hexNum = 0xA;
+    var hexNum = 0xA;
 
 #### Floating-Point values
 Floating-point values uses twice as much memory as storing integer values.
-> var floatNum1 = 1.1
-> var floatNum2 = .1   //valid, but not recommended
+    var floatNum1 = 1.1
+    var floatNum2 = .1   //valid, but not recommended
 
 E-notation is to have a number followed by an uppercase or lower case letter E, followed by the power of 10 to multiply by.
-> var floatNum = 3.125e7  //equal to 31250000
+    var floatNum = 3.125e7  //equal to 31250000
 
 Floating point values are accurate up to 17 decimal places.
 
@@ -129,16 +129,16 @@ use isNaN() function to determine if a value is NaN.
 
 #### Number Conversions
 * Number().  Can be used on any data type.
-  * Boolean, true -> 1, false -> 0
+  * Boolean, true ->1, false ->0
   * Number, simply pass through and returned
-  * _null_ -> 0
-  * _undefined_ -> NaN
+  * _null_ ->0
+  * _undefined_ ->NaN
   * String,
-    * If contains only number, converted to decimal number, with signed.  i.e "123" -> 123
-    * If contains valid floating point format, converted to floating point numeric value. i.e "1.1" -> 1.1
+    * If contains only number, converted to decimal number, with signed.  i.e "123" ->123
+    * If contains valid floating point format, converted to floating point numeric value. i.e "1.1" ->1.1
     * If contains valid hexadecimal format, converted to integer that matahces the hex value
-    * If empty, -> 0
-    * If others, -> NaN
+    * If empty, ->0
+    * If others, ->NaN
   * Object,
     * call valueOf() and return value, if result is NaN, call toString()
 * parseInt().  Specifically used for converting strings to numbers.
@@ -153,7 +153,7 @@ Using double quotes or single quotes has no difference.
 * \unnnn  A unicode character represented by hexdecimal code nnnn (where n is a hex digit 0-F).  Example \u03a3 equals to Greek symbol ∑.
 
 Use _length_ property of a string to return its length
-> alert(text.length);
+    alert(text.length);
 
 
 #### The Nature of Strings
@@ -163,21 +163,21 @@ Use _length_ property of a string to return its length
 * toString()
   * available on values that are numbers, Booleans, objects and strings.
   * when used on a number, toString() accepts argument of radix to output the number
-  	> var num = 10;
-  	> alert(num.toString());  //"10"
-  	> alert(num.toString(2)); //"1010"
-  	> alert(num.toString(8)); //"12"
-  	> alert(num.toString(10)); //"10"
-  	> alert(num.toString(16)); //"a"
+  	    var num = 10;
+  	    alert(num.toString());  //"10"
+  	    alert(num.toString(2)); //"1010"
+  	    alert(num.toString(8)); //"12"
+  	    alert(num.toString(10)); //"10"
+  	    alert(num.toString(16)); //"a"
 * String()
   * if value has toString() method, call toString().
-  * if _null_, -> "null".
-  * if _undefined_, -> "undefinied".
+  * if _null_, ->"null".
+  * if _undefined_, ->"undefinied".
 
 
 ### The Object type
 Use _new_ to create object.
-> var o = new Object();
+    var o = new Object();
 
 Each object has the following properties:
 * constructor
@@ -261,13 +261,13 @@ Shift all bits to the right, filled 0s on empty bits including the 32nd signed b
 
 #### Logical NOT(!)
 Besides Boolean value, it converts the operand of other type to Boolean first and negates it.
-* Object -> false
-* empty string -> true
-* nonempty string -> false
-* 0 -> true
-* any number other than 0 -> false
-* _null_ -> true
-* _undefined_ -> true
+* Object ->false
+* empty string ->true
+* nonempty string ->false
+* 0 ->true
+* any number other than 0 ->false
+* _null_ ->true
+* _undefined_ ->true
 
 Two NOT operators (!!) can simulate the behavior of Boolean() method.
 
@@ -377,3 +377,140 @@ Do conversions first:
 compare witout conversion
 
 
+#### Conditional Operator
+    valuable = boolean_expression ? true_value : false_value;
+
+
+#### Assignment Operators(=)
+
+
+#### Compount-assignment Operators
+* Multiply/assign (*=)
+* Divide/assign (/=)
+* Modulus/assign (%=)
+* Add/assign (+=)
+* Subtract/assign (-=)
+* Left shift/assign (<<=)
+* Signed right shift/assign (>>=)
+* Unsigned right shift/assign (>>>=)
+
+
+### Comma Operator
+Allow execution of more than one operation in a single statement.
+
+
+## Statements
+
+### The _if_ statement
+    if (condition) statement1; else statement2;
+
+    if (condition1) {
+      statement1;
+    } else if (condition2) {
+      statement2;
+    } else {
+      statement3;
+    }
+
+
+### The _do-while_ statement
+    do {
+      statement
+    } while (expression);
+
+
+### The _while_ statement
+    while (expression) {
+      statement;
+    }
+
+
+### The _for_ statement
+    for (var num=initial_value; expression; post-loop-expression) {
+      statement;
+    }
+
+
+### The _for-in_ statement
+    for (property in expression) {
+      statement
+    }
+
+
+### Labeled statement
+    label: statement;
+
+
+### The _break_ and _continue_ statement
+* break: exit loop immediately, forcing execution to continue with the next statement.
+* continue: exit loop immediately but execution continues from the top of the loop.
+
+
+### The _with_ statement
+Set scope of the code within a particular object.
+    with (expression) statement;
+
+**Not recommend to use with statement.**
+
+
+### The _switch_ statement
+    switch (expression) {
+      case value1: statement
+        break;
+      case value2: statement
+        break;
+      case value3: statement
+        break;
+      case value4: statement
+        break;
+      default: statement
+    }
+
+** No type coercion occurs **
+
+
+## Functions
+    function functionName(arg0, arg1, ..., argN) {
+      statements;
+    }
+
+Note:
+* no need to specify a function to return a value or not;
+* stop executing and exits immediately whenever encounters the _return_ statement;
+* _return_ can be used without specifying a value behind;
+* no function ca be named _eval_ or _arguments_;
+* no parameters can be named _eval_ or _arguments_;
+* no two parameters can have the same name.
+
+### Arguments
+* A ECMAScript function don't care how many arguments are passed in, nor does it care about the data type of them.
+* Arguments in ECMAScript are represented as an array _arguments_.  Indivisual argument can be accessed by arugments[0] or arguments[n].
+* Number of arguments can be checked by _arguments.length.
+* Any named argument that is not passed into the function is assigned _undefined_ automatically.
+* Under strict mode, if there's argument not assigned a value, error will be throwed.
+
+
+### No Overloading
+If two functions has the same name the the last function becomes the owner.
+
+However, inside the function you can simulate the overloading by checking type and number of arguments that have been passing into a function.  Detail information can be found on this [SO thread](http://stackoverflow.com/questions/10855908/how-to-overload-functions-in-javascript)
+
+
+
+## Premitive and Reference Value
+*Primitive variable:* Undefined, Null, Boolean, Number, and String.
+*Reference variable:* Objects
+
+
+### Dynamic Properties
+* Reference value can add, change or delete properties and method at any time.
+* Primtive values cannot.
+
+
+### Copying Values
+* When copied, value of a primative variable is copied into the newly created variable.
+* When copied, value of a reference variable, which is a pointer to an object, is copied into the other variable, so both variable points to the same object.
+
+
+### Argument Passing
+All function arguments are passed by value, which is passed into a local variable from outside.
