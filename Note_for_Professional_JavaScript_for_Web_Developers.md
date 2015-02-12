@@ -236,7 +236,7 @@ Returns the number's complement.
 Lines up the bits of each number, and using the following rules to perform operation between the two bits in the same position
 
 BIT FROM FIRST NUMBER | BIT FROM SECOND NUMBER | RESULT
---|---|--
+----------------------|------------------------|--------
 1 | 1 | 1
 1 | 0 | 0
 0 | 1 | 0
@@ -310,7 +310,7 @@ Also:
 * if either operand is _NaN_, return _NaN_
 * if either operand is _undefined_, return _undefined_
 
-> __Short-circuited operations:__ if the first operand determines the result, the second operand is never evaluated.
+> __Short-circuited__ operations: if the first operand determines the result, the second operand is never evaluated.
 
 
 #### Logical OR(||)
@@ -331,7 +331,7 @@ If either operand is not a Boolean, it will:
 * if both operands are _undefined_, _undefined_ is returned
 * if both operands are _NaN_, _NaN_ is returned.
 
-The logical OR is also short-circuited operator.
+The logical OR is also __short-circuited__ operator.
 
 
 ### Multiplicative Operators
