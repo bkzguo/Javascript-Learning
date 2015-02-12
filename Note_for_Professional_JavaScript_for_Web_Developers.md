@@ -247,7 +247,7 @@ BIT FROM FIRST NUMBER | BIT FROM SECOND NUMBER | RESULT
 Follow the following rules:
 
 BIT FROM FIRST NUMBER | BIT FROM SECOND NUMBER | RESULT
---|---|--
+----------------------|------------------------|-------
 1 | 1 | 1
 1 | 0 | 1
 0 | 1 | 1
@@ -258,7 +258,7 @@ BIT FROM FIRST NUMBER | BIT FROM SECOND NUMBER | RESULT
 Follow the following rules:
 
 BIT FROM FIRST NUMBER | BIT FROM SECOND NUMBER | RESULT
---|---|--
+----------------------|------------------------|-------
 1 | 1 | 0
 1 | 0 | 1
 0 | 1 | 1
@@ -296,7 +296,7 @@ Two NOT operators (!!) can simulate the behavior of Boolean() method.
 Follow the rules:
 
 OPERAND 1 | OPERAND 2 | RESULT
------|------|-----
+----------|-----------|-----
 true | true | true
 true | false | false
 false | true | false
@@ -317,7 +317,7 @@ Also:
 Follow the rules:
 
 OPERAND 1 | OPERAND 2 | RESULT
------|------|-----
+----------|-----------|-----
 true | true | true
 true | false | true
 false | true | true
